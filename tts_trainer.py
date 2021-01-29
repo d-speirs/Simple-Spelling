@@ -1,4 +1,4 @@
 import spelling
 
-RandomOrder = False
-spelling.startGame(RandomOrder)
+randomOrder = False
+spelling.startGame(randomOrder)

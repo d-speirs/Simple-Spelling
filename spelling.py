@@ -5,7 +5,7 @@ import random
 from random import seed
 from random import randint
 
-def startGame(RandomOrder):
+def startGame(randomOrder):
   # seeding based on the second of the current time
   time_current = datetime.datetime.now().strftime("%S")
   seed(int(time_current))
@@ -15,19 +15,19 @@ def startGame(RandomOrder):
   index = 0 
   finalIndex = 0
   testWord = ''
-  Lines = []
+  lines = []
 
   print('Type "stop" to exit')
 
   with open(wordlist, 'r') as sourceWordsList:
-    Lines = sourceWordsList.readlines() 
-    finalIndex = len(Lines)-1
+    lines = sourceWordsList.readlines() 
+    finalIndex = len(lines)-1
 
-  while (index <= finalIndex) or (RandomOrder == True):
-    if RandomOrder == True:
-      testWord = random.randint(0,len(Lines)-1)
+  while (index <= finalIndex) or (randomOrder == True):
+    if randomOrder == True:
+      testWord = random.randint(0,len(lines)-1)
     else:
-      testWord = (Lines[index])
+      testWord = (lines[index])
 
     speech.PlayWord(testWord)
     typedText = input("Type word: ")
